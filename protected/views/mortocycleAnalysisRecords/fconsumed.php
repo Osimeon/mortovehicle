@@ -19,12 +19,17 @@ $('.search-form form').submit(function(){
 <?php include 'menuall.php'; ?>
 
 <h3>Fuel Consumption Per Office</h3>
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'reports-grid',
+<?php 
+$gridWidget = $this->widget('application.extensions.groupgridview.GroupGridView', array(
+	'id' => 'grid1',
 	'dataProvider'=>$fconsumed,
+	'mergeColumns' => array('office_name'), 
 	'columns'=>array(
 		'office_name',
-		array('header'=>'Fuel Consumption (Lts)','value'=>function($dataProvider){return number_format($dataProvider->fconsumed, 0). " Litres";},),
+		'analysisperiod',
+		'startdate',
+		'enddate',		
+		 array('header'=>'Fuel Consumption (Lts)','value'=>function($dataProvider){return number_format($dataProvider->fuel_consumed, 0). " Litres";},),
 	),
 )); 
 ?>

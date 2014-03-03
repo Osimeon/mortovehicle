@@ -1,48 +1,51 @@
 <?php
 
 /**
- * This is the model class for table "mortocyle_database.office_total_cost".
+ * This is the model class for table "mortocyle_database.analysis_periods".
  *
- * The followings are the available columns in table 'mortocyle_database.office_total_cost':
- * @property string $office_name
- * @property double $tcost
+ * The followings are the available columns in table 'mortocyle_database.analysis_periods':
+ * @property integer $analysisperiod
  */
-class OfficeTotalCost extends CActiveRecord{
+class AnalysisPeriods extends CActiveRecord
+{
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return OfficeTotalCost the static model class
+	 * @return AnalysisPeriods the static model class
 	 */
-	public static function model($className=__CLASS__){
+	public static function model($className=__CLASS__)
+	{
 		return parent::model($className);
 	}
 
 	/**
 	 * @return string the associated database table name
 	 */
-	public function tableName(){
-		return 'mortocyle_database.office_total_cost';
+	public function tableName()
+	{
+		return 'mortocyle_database.analysis_periods';
 	}
 
 	/**
 	 * @return array validation rules for model attributes.
 	 */
-	public function rules(){
+	public function rules()
+	{
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('tcost', 'numerical'),
-			array('office_name', 'safe'),
+			array('analysisperiod', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('office_name, tcost', 'safe', 'on'=>'search'),
+			array('analysisperiod', 'safe', 'on'=>'search'),
 		);
 	}
 
 	/**
 	 * @return array relational rules.
 	 */
-	public function relations(){
+	public function relations()
+	{
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
@@ -52,10 +55,10 @@ class OfficeTotalCost extends CActiveRecord{
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
-	public function attributeLabels(){
+	public function attributeLabels()
+	{
 		return array(
-			'office_name' => 'Office Name',
-			'tcost' => 'Tcost',
+			'analysisperiod' => 'Analysisperiod',
 		);
 	}
 
@@ -63,14 +66,14 @@ class OfficeTotalCost extends CActiveRecord{
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
-	public function search(){
+	public function search()
+	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('office_name',$this->office_name,true);
-		$criteria->compare('tcost',$this->tcost);
+		$criteria->compare('analysisperiod',$this->analysisperiod);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

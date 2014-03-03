@@ -19,12 +19,17 @@ $('.search-form form').submit(function(){
 <?php include 'menuall.php'; ?>
 
 <h3>Office Total Cost (Kshs)</h3>
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'reports-grid',
+<?php 
+$gridWidget = $this->widget('application.extensions.groupgridview.GroupGridView', array(
+	'id' => 'grid1',
 	'dataProvider'=>$otcost,
+	'mergeColumns' => array('office_name'),
 	'columns'=>array(
 		'office_name',
-		array('header'=>'Total Cost (Kshs)','value'=>function($dataProvider){return number_format($dataProvider->tcost, 0);},),
+		'analysisperiod',
+		'startdate',
+		'enddate',		
+		array('header'=>'Total Cost (Kshs)','value'=>function($dataProvider){return number_format($dataProvider->total_cost, 0);},),
 	),
 )); 
 ?>

@@ -25,10 +25,11 @@ $('.search-form form').submit(function(){
       	'id' => 'grid1',
       	'dataProvider' => $permorto,
       	'mergeColumns' => array('office_name'),  
-      	'columns' => array(
+      	'columns' => array(			
 			'office_name',
-        	'reg_no',		
-			array('header'=>'Mantainance Cost (Kshs)','value'=>function($dataProvider){return number_format($dataProvider->mcost, 0);},),
+			'analysisperiod',
+        	'morto_reg_no',		
+			array('header'=>'Mantainance Cost (Kshs)','value'=>function($dataProvider){return number_format($dataProvider->total_maintenance_a, 0);},),
       	),
     ));
 ?>

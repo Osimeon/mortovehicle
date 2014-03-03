@@ -1,7 +1,6 @@
 <?php
 
-class MortocycleAnalysisRecordsController extends Controller 
-{
+class MortocycleAnalysisRecordsController extends Controller{ 
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'. 
@@ -11,8 +10,7 @@ class MortocycleAnalysisRecordsController extends Controller
 	/**  
 	 * @return array action filters
 	 */  
-	public function filters()
-	{
+	public function filters(){
 		return array(
 			'accessControl', // perform access control for CRUD operations
 			'postOnly + delete', // we only allow deletion via POST request
@@ -22,12 +20,12 @@ class MortocycleAnalysisRecordsController extends Controller
 	/**
 	 * Specifies the access control rules.
 	 * This method is used by the 'accessControl' filter.
-	 * @return array access control rules 
+	 * @return array access control rules  
 	 */
 	public function accessRules(){  
-		return array(
+		return array( 
 			array('allow',  // allow all users to perform 'index' and 'view' actions   
-				'actions'=>array('index','view','report','details','aggregate','users','offices','cumilative','permorto','fconsumed','omaint','otcost'),
+				'actions'=>array('index','view','report','details','aggregate','users','offices','cumilative','permorto','fconsumed','omaint','otcost','menufilter','filterme','officecostbyperiod'),
 				'roles' => array('reader'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -63,12 +61,12 @@ class MortocycleAnalysisRecordsController extends Controller
 	 * Fuel Consumed
 	 */
 	 public function actionOtcost(){
-	 	$otcost = new CActiveDataProvider('OfficeTotalCost',array(
+	 	$otcost = new CActiveDataProvider('TotalCost',array(
         		'pagination' => array(
                         'pageSize' => 30,
                  ),
 				'sort' => array(
-                     'defaultOrder' => 'office_name ASC',
+                     'defaultOrder' => 'office_name, analysisperiod ASC',
                 ),
 		));
 		
@@ -81,12 +79,12 @@ class MortocycleAnalysisRecordsController extends Controller
 	 * Fuel Consumed
 	 */
 	 public function actionOmaint(){
-	 	$omaint = new CActiveDataProvider('OfficeMantainanceCost',array(
+	 	$omaint = new CActiveDataProvider('TotalMaintenance',array(
         		'pagination' => array(
                         'pageSize' => 30,
                  ),
 				'sort' => array(
-                     'defaultOrder' => 'office_name ASC',
+                     'defaultOrder' => 'office_name, analysisperiod ASC',
                 ),
 		));
 		
@@ -99,7 +97,7 @@ class MortocycleAnalysisRecordsController extends Controller
 	 * Fuel Consumed
 	 */
 	 public function actionFconsumed(){
-	 	$fconsumed = new CActiveDataProvider('OfficeFuelConsumed',array(
+	 	$fconsumed = new CActiveDataProvider('FuelConsumed',array(
         		'pagination' => array(
                         'pageSize' => 30,
                  ),
@@ -117,12 +115,12 @@ class MortocycleAnalysisRecordsController extends Controller
 	  * Maintainance Per Mortocycle
 	  */
 	 public function actionPermorto(){
-	 	$permorto = new CActiveDataProvider('MantainanceCostPerMortoPerOffice',array(
+	 	$permorto = new CActiveDataProvider('PeriodicTotalMaintenance',array(
         		'pagination' => array(
                         'pageSize' => 30,
                  ),
 				'sort' => array(
-                     'defaultOrder' => 'office_name ASC',
+                     'defaultOrder' => 'office_name, analysisperiod ASC',
                 ),
 		));
 		
@@ -187,6 +185,20 @@ class MortocycleAnalysisRecordsController extends Controller
         ));
 	}
 	
+	/**
+	 * Office Cost By Period
+	 **/
+	public function actionOfficeCostByPeriod(){
+		$allAnalysis = new CActiveDataProvider('OfficeTotalByPeriod',array(
+        		'pagination' => array(
+            	'pageSize' => 10,
+             ),
+		));
+		$this->render('officebyperiod', array(
+            'allAnalysis' => $allAnalysis,
+        ));
+	}
+	
 	/*
 	 * Aggregate Summary
 	 */
@@ -237,7 +249,11 @@ class MortocycleAnalysisRecordsController extends Controller
             'details' => $details,
         ));
 	}
-
+	
+	public function actionMenuFilter(){
+		$this->render('menufilter');
+	}
+	
 	/**
 	 * Manages all models.
 	 */
@@ -250,6 +266,14 @@ class MortocycleAnalysisRecordsController extends Controller
 		$this->render('admin',array(
 			'model'=>$model,
 		));
+	}
+	
+	public function actionFilterMe(){
+		$model = new TmpFilter;
+		
+		$this->render('filterme', array(
+            'model' => $model,
+        ));
 	}
 
 	/**
