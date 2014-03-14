@@ -49,6 +49,8 @@ class DataEntryLog extends CActiveRecord
 			array('fuel_quantity, kilometers_covered_per_litre, fuel_cost_in_kshs', 'numerical'),
 			array('morto_reg_no, duration_week', 'length', 'max'=>255),
 			array('date_refilled_to_full_tank', 'safe'),
+			array('duration_start', 'safe'),
+			array('duration_end', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('morto_reg_no, date_refilled_to_full_tank, fuel_quantity, odometer_current_reading, odometer_previous_reading, kilometers_covered, kilometers_covered_per_litre, fuel_cost_in_kshs, duration_week, logyear, analysisperiod, log_rec_id', 'safe', 'on'=>'search'),
@@ -85,6 +87,9 @@ class DataEntryLog extends CActiveRecord
 			'logyear' => 'Logyear',
 			'analysisperiod' => 'Analysisperiod',
 			'log_rec_id' => 'Log Rec',
+			'approaved' => 'Approved',
+			'user_created' => 'Created By',
+			'date_created' => 'Date Record Created'
 		);
 	}
 
@@ -115,5 +120,19 @@ class DataEntryLog extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+	
+	public function getStatus(){
+		if(isset($this-> approaved) && $this-> approaved != false){
+			return 'Approaved';
+		}
+		else{
+			return 'Not Approaved';
+		}
+	}
+	
+	public function getUser(){
+		$user = User::model() -> findByAttributes(array('user_id' => $this->user_created));
+		return $user -> username;
 	}
 }

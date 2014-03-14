@@ -6,6 +6,14 @@ return array (
     'description' => 'Only view dispenserapp',
     'bizRule' => '',
     'data' => '',
+    'assignments' => 
+    array (
+      2002 => 
+      array (
+        'bizRule' => NULL,
+        'data' => NULL,
+      ),
+    ),
   ),
   'writer' => 
   array (
@@ -32,11 +40,6 @@ return array (
     'assignments' => 
     array (
       1000 => 
-      array (
-        'bizRule' => NULL,
-        'data' => NULL,
-      ),
-      1558 => 
       array (
         'bizRule' => NULL,
         'data' => NULL,

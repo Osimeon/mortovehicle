@@ -17,7 +17,7 @@
  * @property string $duration_week
  * @property integer $costyear
  * @property integer $analysisperiod
- * @property integer $cost_rec_id
+ * @property integer $cost_rec_id 
  */
 class DataEntryCosts extends CActiveRecord
 {
@@ -42,7 +42,7 @@ class DataEntryCosts extends CActiveRecord
 	/**
 	 * @return array validation rules for model attributes.
 	 */
-	public function rules()
+	public function rules() 
 	{
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
@@ -50,7 +50,7 @@ class DataEntryCosts extends CActiveRecord
 			array('odometer_reading, costyear, analysisperiod', 'numerical', 'integerOnly'=>true),
 			array('oil_lubricant_quantity, oil_lubricant_total_cost, outsource_material_cost, outsource_labour_total_cost', 'numerical'),
 			array('reg_no, oil_lubricant_type, outsource_material, duration_week', 'length', 'max'=>255),
-			array('service_date, description_of_ourtsource_work_performed', 'safe'),
+			array('service_date, description_of_ourtsource_work_performed, duration_start, duration_end', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('reg_no, service_date, oil_lubricant_type, oil_lubricant_quantity, oil_lubricant_total_cost, outsource_material, outsource_material_cost, outsource_labour_total_cost, description_of_ourtsource_work_performed, odometer_reading, duration_week, costyear, analysisperiod, cost_rec_id', 'safe', 'on'=>'search'),
@@ -121,5 +121,23 @@ class DataEntryCosts extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+	
+	public function getStatus(){
+		if(isset($this-> approaved) && $this-> approaved != false){
+			return 'Approaved';
+		}
+		else{
+			return 'Not Approaved';
+		}
+	}
+	
+	public function getUser(){
+		$user = User::model() -> findByAttributes(array('user_id' => $this->user_created));
+		return $user -> username;
+	}
+	
+	public function getTotal(){
+		return $this -> oil_lubricant_total_cost + $this -> outsource_material_cost + $this -> outsource_labour_total_cost;
 	}
 }

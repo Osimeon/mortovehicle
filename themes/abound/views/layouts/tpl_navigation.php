@@ -22,7 +22,8 @@
 						
 						array('label'=>'Mortocycles <span class="caret"></span>', 'url'=>'#','itemOptions'=>array('class'=>'dropdown','tabindex'=>"-1"),'linkOptions'=>array('class'=>'dropdown-toggle','data-toggle'=>"dropdown"), 
                         'items'=>array(
-							array('label'=>'Data Entry', 'url'=>array('/dataEntry/index')),
+							array('label'=>'Data Entry', 'url'=>array('/dataEntry/admin')),
+							array('label'=>'Mortocycle Details', 'url'=>array('/details/admin')),
 							array('label'=>'Reports', 'url'=>array('/mortocycleAnalysisRecords/index')),
                         )),
 						array('label'=>'Vehicles <span class="caret"></span>', 'url'=>'#','itemOptions'=>array('class'=>'dropdown','tabindex'=>"-1"),'linkOptions'=>array('class'=>'dropdown-toggle','data-toggle'=>"dropdown"), 

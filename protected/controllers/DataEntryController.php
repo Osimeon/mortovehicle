@@ -26,15 +26,15 @@
 		{
 			return array(
 				array('allow',  // allow all users to perform 'index' and 'view' actions  
-					'actions'=>array('index'),
+					'actions'=>array('index','view'),
 					'roles' => array('reader'),
 				),
 				array('allow', // allow authenticated user to perform 'create' and 'update' actions
-					'actions'=>array('create','update'),
+					'actions'=>array('create','update','admin','delete'),
 					'roles' => array('writer'),
 				),
 				array('allow', // allow admin user to perform 'admin' and 'delete' actions
-					'actions'=>array('admin','delete'),
+					'actions'=>array('admin','delete','update','create'),
 					'roles' => array('admin'),
 				),
 				array('deny',  // deny all users
@@ -53,6 +53,17 @@
                  ),
 			));
 			$this->render('index', array('dataProvider'=>$dataProvider,));
+		}
+		
+		public function actionAdmin(){
+			$allAnalysis = new CActiveDataProvider('MortocycleAnalysisRecords',array(
+					'pagination' => array(
+					'pageSize' => 10,
+				 ),
+			));
+			$this->render('report', array(
+            	'allAnalysis' => $allAnalysis,
+        	));
 		}
 	}
 ?>

@@ -1,6 +1,6 @@
 <?php
 
-class DataEntryCostsController extends Controller
+class DetailsController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -9,7 +9,7 @@ class DataEntryCostsController extends Controller
 	public $layout='//layouts/column2';
 
 	/**
-	 * @return array action filters 
+	 * @return array action filters
 	 */
 	public function filters()
 	{
@@ -25,25 +25,25 @@ class DataEntryCostsController extends Controller
 	 * @return array access control rules
 	 */
 	public function accessRules()
-	{
-		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions 
-				'actions'=>array('index','view',),
-				'roles' => array('reader'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','delete'),
-				'roles' => array('writer'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','update','create'),
-				'roles' => array('admin'),
-			),
-			array('deny',  // deny all users
-				//'users'=>array('*'),
-			),
-		);
-	}
+		{
+			return array(
+				array('allow',  // allow all users to perform 'index' and 'view' actions  
+					'actions'=>array('index','view'),
+					'roles' => array('reader'),
+				),
+				array('allow', // allow authenticated user to perform 'create' and 'update' actions
+					'actions'=>array('create','update','admin','delete'),
+					'roles' => array('writer'),
+				),
+				array('allow', // allow admin user to perform 'admin' and 'delete' actions
+					'actions'=>array('admin','delete','update','create'),
+					'roles' => array('admin'),
+				),
+				array('deny',  // deny all users
+					//'users'=>array('*'),
+				),
+			);
+		}
 
 	/**
 	 * Displays a particular model.
@@ -62,29 +62,16 @@ class DataEntryCostsController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new DataEntryCosts;
+		$model=new Details;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['DataEntryCosts']))
+		if(isset($_POST['Details']))
 		{
-			$model->attributes=$_POST['DataEntryCosts'];
-			$model->costyear = date('Y');
-			$model->analysisperiod = 999;
-			
-			$model -> user_created = Yii::app()->user->id;
-			$model -> date_created = date('Y-m-d');
-			
+			$model->attributes=$_POST['Details'];
 			if($model->save())
-				$history = new UserHistory;
-				$history -> staff_number = Yii::app()->user->id;
-				$history -> rec_type = 'mantainance';
-				$history -> rec_number = $model->cost_rec_id;
-				$history -> date_of_action = date('Y-m-d');
-				$history -> action_type = 'CREATE';
-				$history -> save();
-				$this->redirect(array('view','id'=>$model->cost_rec_id));
+				$this->redirect(array('view','id'=>$model->reg_no));
 		}
 
 		$this->render('create',array(
@@ -104,18 +91,11 @@ class DataEntryCostsController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['DataEntryCosts']))
+		if(isset($_POST['Details']))
 		{
-			$model->attributes=$_POST['DataEntryCosts'];
+			$model->attributes=$_POST['Details'];
 			if($model->save())
-				$history = new UserHistory;
-				$history -> staff_number = Yii::app()->user->id;
-				$history -> rec_type = 'mantainance';
-				$history -> rec_number = $model->cost_rec_id;
-				$history -> date_of_action = date('Y-m-d');
-				$history -> action_type = 'UPDATE';
-				$history -> save();
-				$this->redirect(array('view','id'=>$model->cost_rec_id));
+				$this->redirect(array('view','id'=>$model->reg_no));
 		}
 
 		$this->render('update',array(
@@ -134,13 +114,6 @@ class DataEntryCostsController extends Controller
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
-			$history = new UserHistory;
-			$history -> staff_number = Yii::app()->user->id;
-			$history -> rec_type = 'mantainance';
-			$history -> rec_number = $model->cost_rec_id;
-			$history -> date_of_action = date('Y-m-d');
-			$history -> action_type = 'DELETE';
-			$history -> save();
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
 
@@ -149,7 +122,7 @@ class DataEntryCostsController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('DataEntryCosts');
+		$dataProvider=new CActiveDataProvider('Details');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -160,10 +133,10 @@ class DataEntryCostsController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new DataEntryCosts('search');
+		$model=new Details('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['DataEntryCosts']))
-			$model->attributes=$_GET['DataEntryCosts'];
+		if(isset($_GET['Details']))
+			$model->attributes=$_GET['Details'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -177,7 +150,7 @@ class DataEntryCostsController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=DataEntryCosts::model()->findByPk($id);
+		$model=Details::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -189,7 +162,7 @@ class DataEntryCostsController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='data-entry-costs-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='details-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

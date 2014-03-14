@@ -78,9 +78,9 @@
 		<?php Yii::import('application.extensions.CJuiDateTimePicker.CJuiDateTimePicker');
             $this->widget('CJuiDateTimePicker',array(
                 'model'=>$model, //Model object
-                'attribute'=>'duration_start', //attribute name
-                'mode'=>'date', //use "time","date" or "datetime" (default)
-                'options'=>array("dateFormat"=>'yy-mm-dd'), // jquery plugin options
+                'attribute' => 'duration_start', //attribute name
+                'mode' => 'date', //use "time","date" or "datetime" (default)
+                'options' => array("dateFormat"=>'yy-mm-dd'), // jquery plugin options
                 'language' => ''
             ));
 		?>

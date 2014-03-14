@@ -87,9 +87,7 @@ class Details extends CActiveRecord
 			'purch_date' => 'Purch Date',
 			'purch_cost' => 'Purch Cost',
 			'fuel_card_no' => 'Fuel Card No',
-			'staff_incharge1' => 'Staff Incharge1',
-			'staff_incharge2' => 'Staff Incharge2',
-			'staff_incharge3' => 'Staff Incharge3',
+			'staff_incharge' => 'Staff Incharge',
 			'engine_number' => 'Engine Number',
 			'frame_number' => 'Frame Number',
 			'log_book_number' => 'Log Book Number',
@@ -116,9 +114,7 @@ class Details extends CActiveRecord
 		$criteria->compare('purch_date',$this->purch_date,true);
 		$criteria->compare('purch_cost',$this->purch_cost);
 		$criteria->compare('fuel_card_no',$this->fuel_card_no);
-		$criteria->compare('staff_incharge1',$this->staff_incharge1);
-		$criteria->compare('staff_incharge2',$this->staff_incharge2);
-		$criteria->compare('staff_incharge3',$this->staff_incharge3);
+		$criteria->compare('staff_incharge',$this->staff_incharge);
 		$criteria->compare('engine_number',$this->engine_number,true);
 		$criteria->compare('frame_number',$this->frame_number,true);
 		$criteria->compare('log_book_number',$this->log_book_number,true);

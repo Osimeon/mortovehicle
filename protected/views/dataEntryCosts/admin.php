@@ -26,20 +26,6 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Data Entry Costs</h1>
-
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
-
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
-
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'data-entry-costs-grid',
 	'dataProvider'=>$model->search(),
@@ -47,20 +33,10 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'columns'=>array(
 		'reg_no',
 		'service_date',
-		'oil_lubricant_type',
-		'oil_lubricant_quantity',
-		'oil_lubricant_total_cost',
-		'outsource_material',
-		/*
-		'outsource_material_cost',
-		'outsource_labour_total_cost',
-		'description_of_ourtsource_work_performed',
-		'odometer_reading',
-		'duration_week',
-		'costyear',
-		'analysisperiod',
-		'cost_rec_id',
-		*/
+		array('header'=>'Record Cost (Kshs)', 'value'=>'$data->getTotal()'),
+		array('header'=>'Approaved', 'value'=>'$data->getStatus()'),
+		array('header'=>'Created By', 'value'=>'$data->getUser()'),
+		'date_created',
 		array(
 			'class'=>'CButtonColumn',
 		),

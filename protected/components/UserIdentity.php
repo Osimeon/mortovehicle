@@ -5,12 +5,10 @@
  * It contains the authentication method that checks if the provided
  * data can identity the user.
  */
-class UserIdentity extends CUserIdentity
-{
+class UserIdentity extends CUserIdentity{
 
 	 // Need to store the user's ID:
 	 private $_id;
-
 
 	/**
 	 * Authenticates a user.
@@ -20,38 +18,34 @@ class UserIdentity extends CUserIdentity
 	 * against some persistent user identity storage (e.g. database).
 	 * @return boolean whether authentication succeeds.
 	 */
-	public function authenticate()
-	{
-		$user = User::model()->findByAttributes(array('email'=>$this->username));
+	public function authenticate(){  
+		$user = User::model() -> findByAttributes(array('email' => $this->username));
 
-		if ($user===null) { // No user found!
-			$this->errorCode=self::ERROR_USERNAME_INVALID;
+		if($user === null) { // No user found!
+			$this -> errorCode = self::ERROR_USERNAME_INVALID;
 		//} else if ($user->password !== SHA1($this->password) ) { // Invalid password!
-                } else if ($user->password !== $this->password ) { // Invalid password! //plain text
-			$this->errorCode=self::ERROR_PASSWORD_INVALID;
-		} else { // Okay!
-		    $this->errorCode=self::ERROR_NONE;
-		    // Store the role in a session:
-		    $this->setState('role', $user->role);
-			$this->_id = $user->user_id;
+        } 
+		else if($user->password !== $this->password ){ // Invalid password! //plain text
+			$this -> errorCode = self::ERROR_PASSWORD_INVALID;
+		} 
+		else{
+		    $this -> errorCode = self::ERROR_NONE;
+		    $this -> setState('role', $user->role);
+			$this -> setState('staff_number', $user -> user_id);
+			$this -> _id = $user->user_id;
                         
-                        //rbac
-                        
-                        $auth=Yii::app()->authManager;
-                        if(!$auth->isAssigned($user->role,$this->_id))
-                        {
-                            if($auth->assign($user->role,$this->_id))
-                            {
-                                Yii::app()->authManager->save();
-                            }
-                        }
+			$auth = Yii::app() -> authManager;
+			if(!$auth -> isAssigned($user -> role,$this->_id)){
+				if($auth->assign($user -> role, $this->_id)){
+					Yii::app()->authManager -> save();
+				}
+			}
 		}
-		return !$this->errorCode;
+		return !$this -> errorCode;
 	}
 	
-	public function getId()
-	{
-	 return $this->_id;
+	public function getId(){
+	 	return $this->_id;
 	}
 
 	

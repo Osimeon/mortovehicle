@@ -8,7 +8,7 @@ class DataEntryLogController extends Controller
 	 */
 	public $layout='//layouts/column2';
 
-	/**
+	/** 
 	 * @return array action filters
 	 */
 	public function filters()
@@ -26,17 +26,17 @@ class DataEntryLogController extends Controller
 	 */
 	public function accessRules()
 	{
-		return array(
+		return array( 
 			array('allow',  // allow all users to perform 'index' and 'view' actions  
 				'actions'=>array('index','view'),
 				'roles' => array('reader'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','admin','delete'),
 				'roles' => array('writer'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin','delete','update','create'),
 				'roles' => array('admin'),
 			),
 			array('deny',  // deny all users
@@ -70,14 +70,27 @@ class DataEntryLogController extends Controller
 
 		if(isset($_POST['DataEntryLog']))
 		{
-			$model->attributes=$_POST['DataEntryLog'];
-			$model->logyear = date('Y');
-			$model->analysisperiod = 999;
+			$model -> attributes = $_POST['DataEntryLog'];
+			$model -> logyear = date('Y');
+			$model -> analysisperiod = 999;
 			$kms_covered = (($model->odometer_current_reading) - ($model->odometer_previous_reading));
-			$model->kilometers_covered_per_litre = ($kms_covered/($model->fuel_quantity));
-			$model->kilometers_covered = $kms_covered;
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->log_rec_id));
+			$model -> kilometers_covered_per_litre = ($kms_covered / ($model->fuel_quantity));
+			$model -> kilometers_covered = $kms_covered;
+			
+			$model -> duration_start = $model -> duration_start;
+			$model -> duration_end = $model -> duration_end;
+			$model -> user_created = Yii::app()->user->id;
+			$model -> date_created = date('Y-m-d');
+			
+			if($model -> save())
+				$history = new UserHistory;
+				$history -> staff_number = Yii::app()->user->id;
+				$history -> rec_type = 'logging';
+				$history -> rec_number = $model->log_rec_id;
+				$history -> date_of_action = date('Y-m-d');
+				$history -> action_type = 'CREATE';
+				$history -> save();				
+				$this->redirect(array('view', 'id' => $model->log_rec_id));
 		}
 
 		$this->render('create',array(
@@ -99,8 +112,15 @@ class DataEntryLogController extends Controller
 
 		if(isset($_POST['DataEntryLog']))
 		{
-			$model->attributes=$_POST['DataEntryLog'];
+			$model->attributes = $_POST['DataEntryLog'];
 			if($model->save())
+				$history = new UserHistory;
+				$history -> staff_number = Yii::app()->user->id;
+				$history -> rec_type = 'logging';
+				$history -> rec_number = $model->log_rec_id;
+				$history -> date_of_action = date('Y-m-d');
+				$history -> action_type = 'UPDATE';
+				$history -> save();		
 				$this->redirect(array('view','id'=>$model->log_rec_id));
 		}
 
@@ -120,6 +140,13 @@ class DataEntryLogController extends Controller
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
+			$history = new UserHistory;
+			$history -> staff_number = Yii::app()->user->id;
+			$history -> rec_type = 'logging';
+			$history -> rec_number = $model->log_rec_id;
+			$history -> date_of_action = date('Y-m-d');
+			$history -> action_type = 'DELETE';
+			$history -> save();	
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
 
