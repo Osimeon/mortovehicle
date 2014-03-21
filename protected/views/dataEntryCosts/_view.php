@@ -31,5 +31,11 @@
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('outsource_material')); ?>:</b>
 	<?php echo CHtml::encode($data->outsource_material); ?>
+    
+    <b><?php echo CHtml::encode($data->getAttributeLabel('user_created')); ?>:</b>
+	<?php echo CHtml::encode($data->outsource_material); ?>
+    
+    <b><?php echo CHtml::encode($data->getAttributeLabel('date_created')); ?>:</b>
+	<?php echo CHtml::encode($data->outsource_material); ?>
 	<br />
 </div>

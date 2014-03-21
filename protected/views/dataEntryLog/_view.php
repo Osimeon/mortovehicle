@@ -32,6 +32,14 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('kilometers_covered')); ?>:</b>
 	<?php echo CHtml::encode($data->kilometers_covered); ?>
 	<br />
+    
+    <b><?php echo CHtml::encode($data->getAttributeLabel('user_created')); ?>:</b>
+	<?php echo CHtml::encode($data->kilometers_covered); ?>
+	<br />
+    
+    <b><?php echo CHtml::encode($data->getAttributeLabel('date_created')); ?>:</b>
+	<?php echo CHtml::encode($data->kilometers_covered); ?>
+	<br />
 
 	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('kilometers_covered_per_litre')); ?>:</b>

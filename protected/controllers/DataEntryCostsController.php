@@ -36,13 +36,34 @@ class DataEntryCostsController extends Controller
 				'roles' => array('writer'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','update','create'),
+				'actions'=>array('admin','delete','update','create','approve'),
 				'roles' => array('admin'),
 			),
 			array('deny',  // deny all users
 				//'users'=>array('*'),
 			),
 		);
+	}
+	
+	public function actionApprove($id){
+		$model = $this -> loadModel($id);
+		
+		if(isset($_POST['DataEntryCosts'])){
+			$model -> attributes = $_POST['DataEntryCosts'];
+			$model -> approaved = 1;
+			if($model->save())
+				$history = new UserHistory;
+				$history -> staff_number = Yii::app()->user->id;
+				$history -> rec_type = 'logging';
+				$history -> rec_number = $model->cost_rec_id;
+				$history -> date_of_action = date('Y-m-d');
+				$history -> action_type = 'APPROVED COST';
+				$history -> save();		
+				$this->redirect(array('view','id'=>$model->cost_rec_id));
+		}
+		$this->render('approve',array(
+			'model'=>$model,
+		));
 	}
 
 	/**

@@ -5821,3 +5821,581 @@ Stack trace:
 REQUEST_URI=/mortovehicle/index.php?r=details/admin
 HTTP_REFERER=http://localhost/mortovehicle/index.php?r=site/index
 ---
+2014/03/14 04:28:52 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php:170
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\wamp\www\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\yii\framework\web\CWebApplication.php(283): CController->run('admin')
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('details/admin')
+#9 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\mortovehicle\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/mortovehicle/index.php?r=details/admin
+HTTP_REFERER=http://localhost/mortovehicle/index.php?r=vehicleDataEntry/index
+---
+2014/03/14 04:28:57 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php:170
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\wamp\www\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\yii\framework\web\CWebApplication.php(283): CController->run('admin')
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('dataEntry/admin')
+#9 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\mortovehicle\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/mortovehicle/index.php?r=dataEntry/admin
+HTTP_REFERER=http://localhost/mortovehicle/index.php?r=details/admin
+---
+2014/03/14 04:33:15 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php:170
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\wamp\www\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\yii\framework\web\CWebApplication.php(283): CController->run('admin')
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('dataEntry/admin')
+#9 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\mortovehicle\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/mortovehicle/index.php?r=dataEntry/admin
+HTTP_REFERER=http://localhost/mortovehicle/index.php?r=details/admin
+---
+2014/03/14 04:33:25 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php:170
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\wamp\www\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\yii\framework\web\CWebApplication.php(283): CController->run('create')
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('vehicleLogDataE...')
+#9 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\mortovehicle\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/mortovehicle/index.php?r=vehicleLogDataEntry/create
+HTTP_REFERER=http://localhost/mortovehicle/index.php?r=vehicleLogDataEntry
+---
+2014/03/14 04:46:57 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php:170
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\wamp\www\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\yii\framework\web\CWebApplication.php(283): CController->run('admin')
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('dataEntry/admin')
+#9 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\mortovehicle\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/mortovehicle/index.php?r=dataEntry/admin
+HTTP_REFERER=http://localhost/mortovehicle/index.php?r=vehicleDataEntry/index
+---
+2014/03/14 04:47:11 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php:170
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\wamp\www\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\yii\framework\web\CWebApplication.php(283): CController->run('create')
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('vehicleLogDataE...')
+#9 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\mortovehicle\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/mortovehicle/index.php?r=vehicleLogDataEntry/create
+HTTP_REFERER=http://localhost/mortovehicle/index.php?r=vehicleLogDataEntry
+---
+2014/03/14 04:47:42 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php:170
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\wamp\www\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\yii\framework\web\CWebApplication.php(283): CController->run('create')
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('vehicleLogDataE...')
+#9 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\mortovehicle\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/mortovehicle/index.php?r=vehicleLogDataEntry/create
+HTTP_REFERER=http://localhost/mortovehicle/index.php?r=vehicleLogDataEntry
+---
+2014/03/14 04:48:02 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php:170
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\wamp\www\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\yii\framework\web\CWebApplication.php(283): CController->run('create')
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('vehicleLogDataE...')
+#9 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\mortovehicle\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/mortovehicle/index.php?r=vehicleLogDataEntry/create
+HTTP_REFERER=http://localhost/mortovehicle/index.php?r=vehicleLogDataEntry
+---
+2014/03/14 04:48:52 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php:170
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\wamp\www\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\yii\framework\web\CWebApplication.php(283): CController->run('admin')
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('vehicleCostsDat...')
+#9 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\mortovehicle\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/mortovehicle/index.php?r=vehicleCostsDataEntry/admin
+HTTP_REFERER=http://localhost/mortovehicle/index.php?r=vehicleCostsDataEntry
+---
+2014/03/14 04:48:58 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php:170
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\wamp\www\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\yii\framework\web\CWebApplication.php(283): CController->run('admin')
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('vehicleCostsDat...')
+#9 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\mortovehicle\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/mortovehicle/index.php?r=vehicleCostsDataEntry/admin
+HTTP_REFERER=http://localhost/mortovehicle/index.php?r=vehicleCostsDataEntry
+---
+2014/03/14 04:49:02 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php:170
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\wamp\www\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\yii\framework\web\CWebApplication.php(283): CController->run('admin')
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('vehicleCostsDat...')
+#9 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\mortovehicle\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/mortovehicle/index.php?r=vehicleCostsDataEntry/admin
+HTTP_REFERER=http://localhost/mortovehicle/index.php?r=vehicleCostsDataEntry
+---
+2014/03/14 04:49:13 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php:170
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\wamp\www\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\yii\framework\web\CWebApplication.php(283): CController->run('create')
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('vehicleCostsDat...')
+#9 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\mortovehicle\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/mortovehicle/index.php?r=vehicleCostsDataEntry/create
+HTTP_REFERER=http://localhost/mortovehicle/index.php?r=vehicleCostsDataEntry
+---
+2014/03/14 04:49:21 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php:170
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\wamp\www\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\yii\framework\web\CWebApplication.php(283): CController->run('create')
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('vehicleCostsDat...')
+#9 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\mortovehicle\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/mortovehicle/index.php?r=vehicleCostsDataEntry/create
+HTTP_REFERER=http://localhost/mortovehicle/index.php?r=vehicleCostsDataEntry
+---
+2014/03/14 04:49:24 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php:170
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\wamp\www\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\yii\framework\web\CWebApplication.php(283): CController->run('admin')
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('vehicleCostsDat...')
+#9 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\mortovehicle\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/mortovehicle/index.php?r=vehicleCostsDataEntry/admin
+HTTP_REFERER=http://localhost/mortovehicle/index.php?r=vehicleCostsDataEntry
+---
+2014/03/14 04:49:27 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php:170
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\wamp\www\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\yii\framework\web\CWebApplication.php(283): CController->run('admin')
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('vehicleCostsDat...')
+#9 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\mortovehicle\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/mortovehicle/index.php?r=vehicleCostsDataEntry/admin
+HTTP_REFERER=http://localhost/mortovehicle/index.php?r=vehicleCostsDataEntry
+---
+2014/03/14 04:49:33 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php:170
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\wamp\www\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\yii\framework\web\CWebApplication.php(283): CController->run('create')
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('vehicleLogDataE...')
+#9 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\mortovehicle\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/mortovehicle/index.php?r=vehicleLogDataEntry/create
+HTTP_REFERER=http://localhost/mortovehicle/index.php?r=vehicleLogDataEntry
+---
+2014/03/14 04:49:51 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php:170
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\wamp\www\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\yii\framework\web\CWebApplication.php(283): CController->run('admin')
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('dataEntry/admin')
+#9 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\mortovehicle\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/mortovehicle/index.php?r=dataEntry/admin
+HTTP_REFERER=http://localhost/mortovehicle/index.php?r=vehicleAnalysisRecords/summary
+---
+2014/03/14 04:49:54 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php:170
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\wamp\www\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\yii\framework\web\CWebApplication.php(283): CController->run('admin')
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('details/admin')
+#9 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\mortovehicle\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/mortovehicle/index.php?r=details/admin
+HTTP_REFERER=http://localhost/mortovehicle/index.php?r=dataEntry/admin
+---
+2014/03/16 21:37:12 [warning] [application] Failed to set unsafe attribute "user_created" of "DataEntryLog".
+in C:\wamp\www\mortovehicle\protected\controllers\DataEntryLogController.php (53)
+in C:\wamp\www\mortovehicle\index.php (13)
+2014/03/16 21:37:12 [warning] [application] Failed to set unsafe attribute "date_created" of "DataEntryLog".
+in C:\wamp\www\mortovehicle\protected\controllers\DataEntryLogController.php (53)
+in C:\wamp\www\mortovehicle\index.php (13)
+2014/03/16 21:37:12 [warning] [application] Failed to set unsafe attribute "approaved" of "DataEntryLog".
+in C:\wamp\www\mortovehicle\protected\controllers\DataEntryLogController.php (53)
+in C:\wamp\www\mortovehicle\index.php (13)
+2014/03/16 21:37:44 [warning] [application] Failed to set unsafe attribute "user_created" of "DataEntryLog".
+in C:\wamp\www\mortovehicle\protected\controllers\DataEntryLogController.php (53)
+in C:\wamp\www\mortovehicle\index.php (13)
+2014/03/16 21:37:44 [warning] [application] Failed to set unsafe attribute "date_created" of "DataEntryLog".
+in C:\wamp\www\mortovehicle\protected\controllers\DataEntryLogController.php (53)
+in C:\wamp\www\mortovehicle\index.php (13)
+2014/03/16 21:37:44 [warning] [application] Failed to set unsafe attribute "approaved" of "DataEntryLog".
+in C:\wamp\www\mortovehicle\protected\controllers\DataEntryLogController.php (53)
+in C:\wamp\www\mortovehicle\index.php (13)
+2014/03/16 21:41:33 [warning] [application] Failed to set unsafe attribute "user_created" of "DataEntryLog".
+in C:\wamp\www\mortovehicle\protected\controllers\DataEntryLogController.php (53)
+in C:\wamp\www\mortovehicle\index.php (13)
+2014/03/16 21:41:33 [warning] [application] Failed to set unsafe attribute "date_created" of "DataEntryLog".
+in C:\wamp\www\mortovehicle\protected\controllers\DataEntryLogController.php (53)
+in C:\wamp\www\mortovehicle\index.php (13)
+2014/03/16 21:41:33 [warning] [application] Failed to set unsafe attribute "approaved" of "DataEntryLog".
+in C:\wamp\www\mortovehicle\protected\controllers\DataEntryLogController.php (53)
+in C:\wamp\www\mortovehicle\index.php (13)
+2014/03/16 21:43:11 [warning] [application] Failed to set unsafe attribute "user_created" of "DataEntryLog".
+in C:\wamp\www\mortovehicle\protected\controllers\DataEntryLogController.php (53)
+in C:\wamp\www\mortovehicle\index.php (13)
+2014/03/16 21:43:11 [warning] [application] Failed to set unsafe attribute "date_created" of "DataEntryLog".
+in C:\wamp\www\mortovehicle\protected\controllers\DataEntryLogController.php (53)
+in C:\wamp\www\mortovehicle\index.php (13)
+2014/03/16 21:43:11 [warning] [application] Failed to set unsafe attribute "approaved" of "DataEntryLog".
+in C:\wamp\www\mortovehicle\protected\controllers\DataEntryLogController.php (53)
+in C:\wamp\www\mortovehicle\index.php (13)
+2014/03/20 05:36:54 [warning] [application] Failed to set unsafe attribute "user_created" of "DataEntryLog".
+in C:\wamp\www\mortovehicle\protected\controllers\DataEntryLogController.php (52)
+in C:\wamp\www\mortovehicle\index.php (13)
+2014/03/20 05:36:54 [warning] [application] Failed to set unsafe attribute "date_created" of "DataEntryLog".
+in C:\wamp\www\mortovehicle\protected\controllers\DataEntryLogController.php (52)
+in C:\wamp\www\mortovehicle\index.php (13)
+2014/03/20 05:36:54 [warning] [application] Failed to set unsafe attribute "approaved" of "DataEntryLog".
+in C:\wamp\www\mortovehicle\protected\controllers\DataEntryLogController.php (52)
+in C:\wamp\www\mortovehicle\index.php (13)
+2014/03/20 05:38:31 [warning] [application] Failed to set unsafe attribute "user_created" of "DataEntryLog".
+in C:\wamp\www\mortovehicle\protected\controllers\DataEntryLogController.php (52)
+in C:\wamp\www\mortovehicle\index.php (13)
+2014/03/20 05:38:31 [warning] [application] Failed to set unsafe attribute "date_created" of "DataEntryLog".
+in C:\wamp\www\mortovehicle\protected\controllers\DataEntryLogController.php (52)
+in C:\wamp\www\mortovehicle\index.php (13)
+2014/03/20 05:38:31 [warning] [application] Failed to set unsafe attribute "approaved" of "DataEntryLog".
+in C:\wamp\www\mortovehicle\protected\controllers\DataEntryLogController.php (52)
+in C:\wamp\www\mortovehicle\index.php (13)
+2014/03/20 05:43:51 [warning] [application] Failed to set unsafe attribute "user_created" of "DataEntryLog".
+in C:\wamp\www\mortovehicle\protected\controllers\DataEntryLogController.php (52)
+in C:\wamp\www\mortovehicle\index.php (13)
+2014/03/20 05:43:51 [warning] [application] Failed to set unsafe attribute "date_created" of "DataEntryLog".
+in C:\wamp\www\mortovehicle\protected\controllers\DataEntryLogController.php (52)
+in C:\wamp\www\mortovehicle\index.php (13)
+2014/03/20 05:43:51 [warning] [application] Failed to set unsafe attribute "approaved" of "DataEntryLog".
+in C:\wamp\www\mortovehicle\protected\controllers\DataEntryLogController.php (52)
+in C:\wamp\www\mortovehicle\index.php (13)
+2014/03/20 06:02:07 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\wamp\www\yii\framework\web\CController.php:337
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(283): CController->run('view')
+#9 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('dataEntryLog/vi...')
+#10 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\wamp\www\mortovehicle\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/mortovehicle/index.php?r=dataEntryLog/view&approave=19
+---
+2014/03/20 06:02:31 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\wamp\www\yii\framework\web\CController.php:337
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(283): CController->run('view')
+#9 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('dataEntryLog/vi...')
+#10 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\wamp\www\mortovehicle\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/mortovehicle/index.php?r=dataEntryLog/view&approave=19
+---
+2014/03/20 06:03:00 [warning] [application] Failed to set unsafe attribute "approaved" of "DataEntryLog".
+in C:\wamp\www\mortovehicle\protected\controllers\DataEntryLogController.php (52)
+in C:\wamp\www\mortovehicle\index.php (13)
+2014/03/20 06:03:15 [warning] [application] Failed to set unsafe attribute "approaved" of "DataEntryLog".
+in C:\wamp\www\mortovehicle\protected\controllers\DataEntryLogController.php (52)
+in C:\wamp\www\mortovehicle\index.php (13)
+2014/03/20 06:21:55 [warning] [application] Failed to set unsafe attribute "approaved" of "DataEntryLog".
+in C:\wamp\www\mortovehicle\protected\controllers\DataEntryLogController.php (52)
+in C:\wamp\www\mortovehicle\index.php (13)
+2014/03/20 06:24:39 [warning] [application] Failed to set unsafe attribute "approaved" of "DataEntryLog".
+in C:\wamp\www\mortovehicle\protected\controllers\DataEntryLogController.php (52)
+in C:\wamp\www\mortovehicle\index.php (13)
+2014/03/20 07:08:05 [warning] [application] Failed to set unsafe attribute "approaved" of "DataEntryLog".
+in C:\wamp\www\mortovehicle\protected\controllers\DataEntryLogController.php (52)
+in C:\wamp\www\mortovehicle\index.php (13)
+2014/03/20 07:11:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "approave".' in C:\wamp\www\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(271): CController->missingAction('approave')
+#1 C:\wamp\www\yii\framework\web\CWebApplication.php(283): CController->run('approave')
+#2 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('dataEntryLog/ap...')
+#3 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\www\mortovehicle\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mortovehicle/index.php?r=dataEntryLog/approave&id=19
+---
+2014/03/20 07:11:09 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php:170
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\wamp\www\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\yii\framework\web\CWebApplication.php(283): CController->run('approve')
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('dataEntryLog/ap...')
+#9 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\mortovehicle\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/mortovehicle/index.php?r=dataEntryLog/approve&id=19
+---
+2014/03/20 07:12:03 [error] [exception.CException] exception 'CException' with message 'DataEntryLogController cannot find the requested view "_approave".' in C:\wamp\www\yii\framework\web\CController.php:879
+Stack trace:
+#0 C:\wamp\www\mortovehicle\protected\views\dataEntryLog\approve.php(21): CController->renderPartial('_approave', Array)
+#1 C:\wamp\www\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\mor...')
+#2 C:\wamp\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\mor...', Array, true)
+#3 C:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\mor...', Array, true)
+#4 C:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('approve', Array, true)
+#5 C:\wamp\www\mortovehicle\protected\controllers\DataEntryLogController.php(65): CController->render('approve', Array)
+#6 [internal function]: DataEntryLogController->actionApprove('19')
+#7 C:\wamp\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(DataEntryLogController), Array)
+#8 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(DataEntryLogController), Object(ReflectionMethod), Array)
+#9 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#12 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#13 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#16 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\wamp\www\yii\framework\web\CWebApplication.php(283): CController->run('approve')
+#18 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('dataEntryLog/ap...')
+#19 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#20 C:\wamp\www\mortovehicle\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/mortovehicle/index.php?r=dataEntryLog/approve&id=19
+---
+2014/03/21 08:39:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "approave".' in C:\wamp\www\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(271): CController->missingAction('approave')
+#1 C:\wamp\www\yii\framework\web\CWebApplication.php(283): CController->run('approave')
+#2 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('dataEntryLog/ap...')
+#3 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\www\mortovehicle\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mortovehicle/index.php?r=dataEntryLog/approave&id=18
+---
+2014/03/21 08:40:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "approave".' in C:\wamp\www\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(271): CController->missingAction('approave')
+#1 C:\wamp\www\yii\framework\web\CWebApplication.php(283): CController->run('approave')
+#2 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('dataEntryLog/ap...')
+#3 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\www\mortovehicle\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mortovehicle/index.php?r=dataEntryLog/approave&id=19
+---
+2014/03/21 08:40:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "approave".' in C:\wamp\www\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(271): CController->missingAction('approave')
+#1 C:\wamp\www\yii\framework\web\CWebApplication.php(283): CController->run('approave')
+#2 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('dataEntryLog/ap...')
+#3 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\www\mortovehicle\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mortovehicle/index.php?r=dataEntryLog/approave&id=20
+---
+2014/03/21 12:20:46 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\wamp\www\yii\framework\web\CController.php:337
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(283): CController->run('view')
+#9 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('dataEntryLog/vi...')
+#10 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\wamp\www\mortovehicle\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/mortovehicle/index.php?r=dataEntryLog/view&approve=18
+---
+2014/03/21 12:21:06 [warning] [application] Failed to set unsafe attribute "approaved" of "DataEntryLog".
+in C:\wamp\www\mortovehicle\protected\controllers\DataEntryLogController.php (52)
+in C:\wamp\www\mortovehicle\index.php (13)
+2014/03/21 12:21:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "approva".' in C:\wamp\www\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(271): CController->missingAction('approva')
+#1 C:\wamp\www\yii\framework\web\CWebApplication.php(283): CController->run('approva')
+#2 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('dataEntryLog/ap...')
+#3 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\www\mortovehicle\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mortovehicle/index.php?r=dataEntryLog/approva&id=18
+---
+2014/03/21 12:21:42 [warning] [application] Failed to set unsafe attribute "approaved" of "DataEntryLog".
+in C:\wamp\www\mortovehicle\protected\controllers\DataEntryLogController.php (52)
+in C:\wamp\www\mortovehicle\index.php (13)
+2014/03/21 12:34:02 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php:170
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\wamp\www\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\yii\framework\web\CWebApplication.php(283): CController->run('approve')
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('dataEntryCosts/...')
+#9 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\mortovehicle\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/mortovehicle/index.php?r=dataEntryCosts/approve&id=4
+---
+2014/03/21 12:34:31 [warning] [application] Failed to set unsafe attribute "approaved" of "DataEntryCosts".
+in C:\wamp\www\mortovehicle\protected\controllers\DataEntryCostsController.php (52)
+in C:\wamp\www\mortovehicle\index.php (13)
+2014/03/21 12:34:31 [error] [exception.CException] exception 'CException' with message 'Property "DataEntryCosts.log_rec_id" is not defined.' in C:\wamp\www\yii\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(144): CComponent->__get('log_rec_id')
+#1 C:\wamp\www\mortovehicle\protected\controllers\DataEntryCostsController.php(58): CActiveRecord->__get('log_rec_id')
+#2 [internal function]: DataEntryCostsController->actionApprove('4')
+#3 C:\wamp\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(DataEntryCostsController), Array)
+#4 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(DataEntryCostsController), Object(ReflectionMethod), Array)
+#5 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#8 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#12 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\wamp\www\yii\framework\web\CWebApplication.php(283): CController->run('approve')
+#14 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('dataEntryCosts/...')
+#15 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\wamp\www\mortovehicle\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/mortovehicle/index.php?r=dataEntryCosts/approve&id=4
+HTTP_REFERER=http://localhost/mortovehicle/index.php?r=dataEntryCosts/approve&id=4
+---
+2014/03/21 12:35:09 [warning] [application] Failed to set unsafe attribute "approaved" of "DataEntryCosts".
+in C:\wamp\www\mortovehicle\protected\controllers\DataEntryCostsController.php (52)
+in C:\wamp\www\mortovehicle\index.php (13)

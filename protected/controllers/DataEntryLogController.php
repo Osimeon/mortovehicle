@@ -11,7 +11,7 @@ class DataEntryLogController extends Controller
 	/** 
 	 * @return array action filters
 	 */
-	public function filters()
+	public function filters() 
 	{
 		return array(
 			'accessControl', // perform access control for CRUD operations
@@ -36,13 +36,34 @@ class DataEntryLogController extends Controller
 				'roles' => array('writer'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','update','create'),
+				'actions'=>array('admin','delete','update','create','approve'),
 				'roles' => array('admin'),
 			),
 			array('deny',  // deny all users
 				//'users'=>array('*'),
 			),
 		);
+	}
+	
+	public function actionApprove($id){
+		$model = $this -> loadModel($id);
+		
+		if(isset($_POST['DataEntryLog'])){
+			$model -> attributes = $_POST['DataEntryLog'];
+			$model -> approaved = 1;
+			if($model->save())
+				$history = new UserHistory;
+				$history -> staff_number = Yii::app()->user->id;
+				$history -> rec_type = 'logging';
+				$history -> rec_number = $model->log_rec_id;
+				$history -> date_of_action = date('Y-m-d');
+				$history -> action_type = 'APPROVE LOG';
+				$history -> save();		
+				$this->redirect(array('view','id'=>$model->log_rec_id));
+		}
+		$this->render('approve',array(
+			'model'=>$model,
+		));
 	}
 
 	/**

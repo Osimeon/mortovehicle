@@ -11,6 +11,7 @@ $this->menu=array(
 	array('label'=>'List Log Records', 'url'=>array('index')),
 	array('label'=>'Create Log Record', 'url'=>array('create')),
 	array('label'=>'Update Log Record', 'url'=>array('update', 'id'=>$model->log_rec_id)),
+	array('label'=>'Approve Log Record', 'url'=>array('approve', 'id'=>$model->log_rec_id)),
 	#array('label'=>'Delete Logging', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->log_rec_id),'confirm'=>'Are you sure you want to delete this item?')),
 	#array('label'=>'Manage Logging', 'url'=>array('admin')),
 );
@@ -31,5 +32,7 @@ $this->menu=array(
 		'fuel_cost_in_kshs',
 		'duration_start',
 		'duration_end',
+		array('label'=>'Created By', 'value'=>$model->getUser()),
+		'date_created'
 	),
 )); ?>
