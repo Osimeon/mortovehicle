@@ -11,9 +11,7 @@
  * @property string $purch_date
  * @property double $purch_cost
  * @property integer $fuel_card_no
- * @property integer $staff_incharge1
- * @property integer $staff_incharge2
- * @property integer $staff_incharge3
+ * @property integer $staff_incharge
  * @property string $engine_number
  * @property string $frame_number
  * @property string $log_book_number
@@ -48,14 +46,14 @@ class Details extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('reg_no', 'required'),
-			array('fuel_card_no, staff_incharge1, staff_incharge2, staff_incharge3', 'numerical', 'integerOnly'=>true),
+			array('reg_no, purch_date, purch_cost, fuel_card_no, staff_incharge', 'required'),
+			array('fuel_card_no, staff_incharge', 'numerical', 'integerOnly'=>true),
 			array('purch_cost', 'numerical'),
 			array('reg_no, dept, officebase_location, morto_desc_type', 'length', 'max'=>255),
 			array('purch_date, engine_number, frame_number, log_book_number, insurance_provider, insurance_expiry_date', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('reg_no, dept, officebase_location, morto_desc_type, purch_date, purch_cost, fuel_card_no, staff_incharge1, staff_incharge2, staff_incharge3, engine_number, frame_number, log_book_number, insurance_provider, insurance_expiry_date', 'safe', 'on'=>'search'),
+			array('reg_no, dept, officebase_location, morto_desc_type, purch_date, purch_cost, fuel_card_no, staff_incharge, engine_number, frame_number, log_book_number, insurance_provider, insurance_expiry_date', 'safe', 'on'=>'search'),
 		);
 	}
 

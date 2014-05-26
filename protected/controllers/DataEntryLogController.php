@@ -1,7 +1,6 @@
 <?php
 
-class DataEntryLogController extends Controller
-{
+class DataEntryLogController extends Controller{
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
@@ -11,8 +10,7 @@ class DataEntryLogController extends Controller
 	/** 
 	 * @return array action filters
 	 */
-	public function filters() 
-	{
+	public function filters(){ 
 		return array(
 			'accessControl', // perform access control for CRUD operations
 			'postOnly + delete', // we only allow deletion via POST request
@@ -176,7 +174,7 @@ class DataEntryLogController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('DataEntryLog');
+		$dataProvider = new CActiveDataProvider('DataEntryLog');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -185,15 +183,20 @@ class DataEntryLogController extends Controller
 	/**
 	 * Manages all models.
 	 */
-	public function actionAdmin()
-	{
-		$model=new DataEntryLog('search');
-		$model->unsetAttributes();  // clear any default values
+	public function actionAdmin(){
+		
+		$approved = new CActiveDataProvider('ApprovedLogs');
+		$unapproved = new CActiveDataProvider('NonApprovedLogs');
+		
+		$model = new DataEntryLog('search');
+				
+		$model -> unsetAttributes();
+		
 		if(isset($_GET['DataEntryLog']))
 			$model->attributes=$_GET['DataEntryLog'];
 
-		$this->render('admin',array(
-			'model'=>$model,
+		$this -> render('admin',array(
+			'model' => $model, 'unapproved' => $unapproved,'approved' => $approved,
 		));
 	}
 
@@ -202,9 +205,9 @@ class DataEntryLogController extends Controller
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer the ID of the model to be loaded
 	 */
-	public function loadModel($id)
-	{
-		$model=DataEntryLog::model()->findByPk($id);
+	public function loadModel($id){
+		$model = DataEntryLog::model()->findByPk($id);
+		
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;

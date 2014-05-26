@@ -181,13 +181,17 @@ class DataEntryCostsController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new DataEntryCosts('search');
+		$model = new DataEntryCosts('search');
 		$model->unsetAttributes();  // clear any default values
+		
+		$approved = new CActiveDataProvider('ApprovedCosts');
+		$unapproved = new CActiveDataProvider('NonApprovedCost');
+		
 		if(isset($_GET['DataEntryCosts']))
 			$model->attributes=$_GET['DataEntryCosts'];
 
-		$this->render('admin',array(
-			'model'=>$model,
+		$this -> render('admin',array(
+			'model' => $model, 'unapproved' => $unapproved,'approved' => $approved,
 		));
 	}
 

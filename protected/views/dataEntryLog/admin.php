@@ -26,6 +26,48 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
+<h3>Non Approved Logs</h3>
+
+<?php 
+$gridWidget = $this->widget('zii.widgets.grid.CGridView', array(
+	'id' => 'grid1',
+	'dataProvider'=>$unapproved,
+	'columns'=>array(
+		'morto_reg_no',
+		'date_refilled_to_full_tank',
+		array('header'=>'Fuel Cost','value'=>function($dataProvider){return 'Kes '.number_format($dataProvider->fuel_cost_in_kshs, 0);},),
+		array('header'=>'Approaved', 'value'=>'$data->getStatus()'),
+		array('header'=>'Created By', 'value'=>'$data->getUser()'),
+		'date_created',
+		array(
+			'class'=>'CButtonColumn',
+		),
+	),
+)); 
+?>
+
+<h3>Approved Logs</h3>
+
+<?php 
+$gridWidget = $this->widget('zii.widgets.grid.CGridView', array(
+	'id' => 'grid1',
+	'dataProvider'=>$approved,
+	'columns'=>array(
+		'morto_reg_no',
+		'date_refilled_to_full_tank',
+		array('header'=>'Fuel Cost','value'=>function($dataProvider){return 'Kes '.number_format($dataProvider->fuel_cost_in_kshs, 0);},),
+		array('header'=>'Approaved', 'value'=>'$data->getStatus()'),
+		array('header'=>'Created By', 'value'=>'$data->getUser()'),
+		'date_created',
+		array(
+			'class'=>'CButtonColumn',
+		),
+	),
+)); 
+?>
+
+<h3>All Logs</h3>
+
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'data-entry-log-grid',
 	'dataProvider'=>$model->search(),

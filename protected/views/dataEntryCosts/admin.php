@@ -26,6 +26,41 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
+<h2>Non Approved Costs</h2>
+<?php $this->widget('zii.widgets.grid.CGridView', array(
+	'id'=>'data-entry-costs-grid',
+	'dataProvider'=>$unapproved,
+	'columns'=>array(
+		'reg_no',
+		'service_date',
+		array('header'=>'Record Cost (Kshs)', 'value'=>'$data->getTotal()'),
+		array('header'=>'Approaved', 'value'=>'$data->getStatus()'),
+		array('header'=>'Created By', 'value'=>'$data->getUser()'),
+		'date_created',
+		array(
+			'class'=>'CButtonColumn',
+		),
+	),
+)); ?>
+
+<h2>Approved Costs</h2>
+<?php $this->widget('zii.widgets.grid.CGridView', array(
+	'id'=>'data-entry-costs-grid',
+	'dataProvider'=>$approved,
+	'columns'=>array(
+		'reg_no',
+		'service_date',
+		array('header'=>'Record Cost (Kshs)', 'value'=>'$data->getTotal()'),
+		array('header'=>'Approaved', 'value'=>'$data->getStatus()'),
+		array('header'=>'Created By', 'value'=>'$data->getUser()'),
+		'date_created',
+		array(
+			'class'=>'CButtonColumn',
+		),
+	),
+)); ?>
+
+<h2>All Costs</h2>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'data-entry-costs-grid',
 	'dataProvider'=>$model->search(),

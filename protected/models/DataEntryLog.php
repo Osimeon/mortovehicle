@@ -76,7 +76,7 @@ class DataEntryLog extends CActiveRecord
 	{
 		return array(
 			'morto_reg_no' => 'Morto Reg No',
-			'date_refilled_to_full_tank' => 'Date Refilled To Full Tank',
+			'date_refilled_to_full_tank' => 'Date',
 			'fuel_quantity' => 'Fuel Quantity',
 			'odometer_current_reading' => 'Odometer Current Reading',
 			'odometer_previous_reading' => 'Odometer Previous Reading',
