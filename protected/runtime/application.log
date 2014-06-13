@@ -7580,3 +7580,128 @@ Stack trace:
 REQUEST_URI=/mortovehicle/index.php?r=dataEntryCosts/admin
 HTTP_REFERER=http://localhost/mortovehicle/index.php?r=dataEntry/admin
 ---
+2014/06/11 06:56:35 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php:170
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\wamp\www\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\yii\framework\web\CWebApplication.php(283): CController->run('siaya')
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('mortocycleAnaly...')
+#9 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\mortovehicle\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/mortovehicle/index.php?r=mortocycleAnalysisRecords/siaya
+HTTP_REFERER=http://localhost/mortovehicle/index.php?r=mortocycleAnalysisRecords/report
+---
+2014/06/11 07:00:25 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "SIAYA"
+LINE 1: ...tabase"."aggregate_by_office" "t" WHERE office_name IS SIAYA
+                                                                  ^. The SQL statement executed was: SELECT COUNT(*) FROM "mortocyle_database"."aggregate_by_office" "t" WHERE office_name IS SIAYA.
+in C:\wamp\www\mortovehicle\protected\views\mortocycleAnalysisRecords\siaya.php (35)
+in C:\wamp\www\mortovehicle\protected\controllers\MortocycleAnalysisRecordsController.php (267)
+in C:\wamp\www\mortovehicle\index.php (13)
+2014/06/11 07:00:25 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "SIAYA"
+LINE 1: ...tabase"."aggregate_by_office" "t" WHERE office_name IS SIAYA
+                                                                  ^. The SQL statement executed was: SELECT COUNT(*) FROM "mortocyle_database"."aggregate_by_office" "t" WHERE office_name IS SIAYA' in C:\wamp\www\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\wamp\www\yii\framework\db\CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1540): CDbCommand->queryScalar()
+#2 C:\wamp\www\yii\framework\web\CActiveDataProvider.php(179): CActiveRecord->count(Object(CDbCriteria))
+#3 C:\wamp\www\yii\framework\web\CDataProvider.php(193): CActiveDataProvider->calculateTotalItemCount()
+#4 C:\wamp\www\yii\framework\web\CActiveDataProvider.php(129): CDataProvider->getTotalItemCount()
+#5 C:\wamp\www\yii\framework\web\CDataProvider.php(137): CActiveDataProvider->fetchData()
+#6 C:\wamp\www\yii\framework\zii\widgets\CBaseListView.php(108): CDataProvider->getData()
+#7 C:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(289): CBaseListView->init()
+#8 C:\wamp\www\yii\framework\web\CBaseController.php(148): CGridView->init()
+#9 C:\wamp\www\yii\framework\web\CBaseController.php(173): CBaseController->createWidget('zii.widgets.gri...', Array)
+#10 C:\wamp\www\mortovehicle\protected\views\mortocycleAnalysisRecords\siaya.php(35): CBaseController->widget('zii.widgets.gri...', Array)
+#11 C:\wamp\www\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\mor...')
+#12 C:\wamp\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\mor...', Array, true)
+#13 C:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\mor...', Array, true)
+#14 C:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('siaya', Array, true)
+#15 C:\wamp\www\mortovehicle\protected\controllers\MortocycleAnalysisRecordsController.php(267): CController->render('siaya', Array)
+#16 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(50): MortocycleAnalysisRecordsController->actionSiaya()
+#17 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#18 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#19 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#20 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#21 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#22 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#23 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#24 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\wamp\www\yii\framework\web\CWebApplication.php(283): CController->run('siaya')
+#26 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('mortocycleAnaly...')
+#27 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#28 C:\wamp\www\mortovehicle\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/mortovehicle/index.php?r=mortocycleAnalysisRecords/siaya
+HTTP_REFERER=http://localhost/mortovehicle/index.php?r=mortocycleAnalysisRecords/report
+---
+2014/06/11 07:04:14 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42703]: Undefined column: 7 ERROR:  column "siaya" does not exist
+LINE 1: ...atabase"."aggregate_by_office" "t" WHERE office_name = SIAYA
+                                                                  ^. The SQL statement executed was: SELECT COUNT(*) FROM "mortocyle_database"."aggregate_by_office" "t" WHERE office_name = SIAYA.
+in C:\wamp\www\mortovehicle\protected\views\mortocycleAnalysisRecords\siaya.php (35)
+in C:\wamp\www\mortovehicle\protected\controllers\MortocycleAnalysisRecordsController.php (267)
+in C:\wamp\www\mortovehicle\index.php (13)
+2014/06/11 07:04:14 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42703]: Undefined column: 7 ERROR:  column "siaya" does not exist
+LINE 1: ...atabase"."aggregate_by_office" "t" WHERE office_name = SIAYA
+                                                                  ^. The SQL statement executed was: SELECT COUNT(*) FROM "mortocyle_database"."aggregate_by_office" "t" WHERE office_name = SIAYA' in C:\wamp\www\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\wamp\www\yii\framework\db\CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1540): CDbCommand->queryScalar()
+#2 C:\wamp\www\yii\framework\web\CActiveDataProvider.php(179): CActiveRecord->count(Object(CDbCriteria))
+#3 C:\wamp\www\yii\framework\web\CDataProvider.php(193): CActiveDataProvider->calculateTotalItemCount()
+#4 C:\wamp\www\yii\framework\web\CActiveDataProvider.php(129): CDataProvider->getTotalItemCount()
+#5 C:\wamp\www\yii\framework\web\CDataProvider.php(137): CActiveDataProvider->fetchData()
+#6 C:\wamp\www\yii\framework\zii\widgets\CBaseListView.php(108): CDataProvider->getData()
+#7 C:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(289): CBaseListView->init()
+#8 C:\wamp\www\yii\framework\web\CBaseController.php(148): CGridView->init()
+#9 C:\wamp\www\yii\framework\web\CBaseController.php(173): CBaseController->createWidget('zii.widgets.gri...', Array)
+#10 C:\wamp\www\mortovehicle\protected\views\mortocycleAnalysisRecords\siaya.php(35): CBaseController->widget('zii.widgets.gri...', Array)
+#11 C:\wamp\www\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\mor...')
+#12 C:\wamp\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\mor...', Array, true)
+#13 C:\wamp\www\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\mor...', Array, true)
+#14 C:\wamp\www\yii\framework\web\CController.php(783): CController->renderPartial('siaya', Array, true)
+#15 C:\wamp\www\mortovehicle\protected\controllers\MortocycleAnalysisRecordsController.php(267): CController->render('siaya', Array)
+#16 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(50): MortocycleAnalysisRecordsController->actionSiaya()
+#17 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#18 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#19 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#20 C:\wamp\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#21 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#22 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#23 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#24 C:\wamp\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\wamp\www\yii\framework\web\CWebApplication.php(283): CController->run('siaya')
+#26 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('mortocycleAnaly...')
+#27 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#28 C:\wamp\www\mortovehicle\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/mortovehicle/index.php?r=mortocycleAnalysisRecords/siaya
+HTTP_REFERER=http://localhost/mortovehicle/index.php?r=mortocycleAnalysisRecords/report
+---
+2014/06/13 11:45:45 [error] [php] Undefined variable: allAnalysis (C:\wamp\www\mortovehicle\protected\views\mortocycleAnalysisRecords\siaya.php:120)
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(870): MortocycleAnalysisRecordsController->renderFile()
+#1 C:\wamp\www\yii\framework\web\CController.php(783): MortocycleAnalysisRecordsController->renderPartial()
+#2 C:\wamp\www\mortovehicle\protected\controllers\MortocycleAnalysisRecordsController.php(342): MortocycleAnalysisRecordsController->render()
+#3 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(50): MortocycleAnalysisRecordsController->actionSiaya()
+#4 C:\wamp\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(134): MortocycleAnalysisRecordsController->runAction()
+#6 C:\wamp\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 C:\wamp\www\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#8 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(59): MortocycleAnalysisRecordsController->filterAccessControl()
+#9 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#10 C:\wamp\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#11 C:\wamp\www\yii\framework\web\CController.php(266): MortocycleAnalysisRecordsController->runActionWithFilters()
+#12 C:\wamp\www\yii\framework\web\CWebApplication.php(283): MortocycleAnalysisRecordsController->run()
+#13 C:\wamp\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#14 C:\wamp\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\wamp\www\mortovehicle\index.php(13): CWebApplication->run()
+REQUEST_URI=/mortovehicle/index.php?r=mortocycleAnalysisRecords/siaya
+in C:\wamp\www\mortovehicle\protected\views\mortocycleAnalysisRecords\siaya.php (120)
+in C:\wamp\www\mortovehicle\protected\controllers\MortocycleAnalysisRecordsController.php (342)
+in C:\wamp\www\mortovehicle\index.php (13)

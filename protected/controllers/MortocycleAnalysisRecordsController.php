@@ -22,10 +22,10 @@ class MortocycleAnalysisRecordsController extends Controller{
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules  
 	 */
-	public function accessRules(){  
+	public function accessRules(){   
 		return array( 
-			array('allow',  // allow all users to perform 'index' and 'view' actions   
-				'actions'=>array('index','view','report','details','aggregate','users','offices','cumilative','permorto','fconsumed','omaint','otcost','menufilter','filterme','officecostbyperiod'),
+			array('allow',  // allow all users to perform 'index' and 'view' actions    
+				'actions'=>array('index','view','report','details','aggregate','users','offices','cumilative','permorto','fconsumed','omaint','otcost','menufilter','filterme','officecostbyperiod','siaya','busia','bungoma','kakamega','lugari','ugunja','vihiga'),
 				'roles' => array('reader'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -249,6 +249,639 @@ class MortocycleAnalysisRecordsController extends Controller{
             'details' => $details,
         ));
 	}
+	
+	/**
+	 * Siaya Office
+	 **/
+	 public function actionSiaya(){
+	 	$summary = new CActiveDataProvider('SummaryByOffice',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'SIAYA'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name, analysisperiod ASC',
+                ),
+		));
+	 	$otcost = new CActiveDataProvider('TotalCost',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'SIAYA'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name, analysisperiod ASC',
+                ),
+		));
+	 	$omaint = new CActiveDataProvider('TotalMaintenance',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'SIAYA'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name, analysisperiod ASC',
+                ),
+		));	 
+	 	$permorto = new CActiveDataProvider('PeriodicTotalMaintenance',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'SIAYA'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name, analysisperiod ASC',
+                ),
+		));
+	 	$fconsumed = new CActiveDataProvider('FuelConsumed',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'SIAYA'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name ASC',
+                ),
+		));
+	 	
+	 	$cumilative = new CActiveDataProvider('CumilativeSummary',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'SIAYA'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name ASC',
+                ),
+		));
+		
+	 	$aggregate = new CActiveDataProvider('AggregateByOffice',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'SIAYA'",
+               	),
+        		'pagination' => array(
+            		'pageSize' => 10,
+             ),
+		));
+		
+		$this->render('siaya', array(
+            'aggregate' => $aggregate,
+			'cumilative' => $cumilative,
+			'fconsumed' => $fconsumed,
+			'permorto' => $permorto,
+			'omaint' => $omaint,
+			'otcost' => $otcost,
+			'summary' => $summary,
+        ));
+	 }
+	 
+	 /**
+	 * Busia Office
+	 **/
+	 public function actionBusia(){
+	 	$summary = new CActiveDataProvider('SummaryByOffice',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'BUSIA'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name, analysisperiod ASC',
+                ),
+		));
+	 	$otcost = new CActiveDataProvider('TotalCost',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'BUSIA'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name, analysisperiod ASC',
+                ),
+		));
+	 	$omaint = new CActiveDataProvider('TotalMaintenance',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'BUSIA'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name, analysisperiod ASC',
+                ),
+		));	 
+	 	$permorto = new CActiveDataProvider('PeriodicTotalMaintenance',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'BUSIA'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name, analysisperiod ASC',
+                ),
+		));
+	 	$fconsumed = new CActiveDataProvider('FuelConsumed',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'BUSIA'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name ASC',
+                ),
+		));
+	 	
+	 	$cumilative = new CActiveDataProvider('CumilativeSummary',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'BUSIA'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name ASC',
+                ),
+		));
+	 	$aggregate = new CActiveDataProvider('AggregateByOffice',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'BUSIA'",
+               	),
+        		'pagination' => array(
+            		'pageSize' => 10,
+             ),
+		));
+		
+		$this->render('busia', array(
+            'aggregate' => $aggregate,
+			'cumilative' => $cumilative,
+			'fconsumed' => $fconsumed,
+			'permorto' => $permorto,
+			'omaint' => $omaint,
+			'otcost' => $otcost,
+			'summary' => $summary,
+        ));
+	 }
+	 
+	 /**
+	 * Kakamega Office
+	 **/
+	 public function actionKakamega(){
+	 	$summary = new CActiveDataProvider('SummaryByOffice',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'KAKAMEGA'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name, analysisperiod ASC',
+                ),
+		));
+	 	$otcost = new CActiveDataProvider('TotalCost',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'KAKAMEGA'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name, analysisperiod ASC',
+                ),
+		));
+	 	$omaint = new CActiveDataProvider('TotalMaintenance',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'KAKAMEGA'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name, analysisperiod ASC',
+                ),
+		));	 
+	 	$permorto = new CActiveDataProvider('PeriodicTotalMaintenance',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'KAKAMEGA'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name, analysisperiod ASC',
+                ),
+		));
+	 	$fconsumed = new CActiveDataProvider('FuelConsumed',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'KAKAMEGA'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name ASC',
+                ),
+		));
+	 	
+	 	$cumilative = new CActiveDataProvider('CumilativeSummary',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'KAKAMEGA'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name ASC',
+                ),
+		));
+	 	$aggregate = new CActiveDataProvider('AggregateByOffice',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'KAKAMEGA'",
+               	),
+        		'pagination' => array(
+            		'pageSize' => 10,
+             ),
+		));
+		$this->render('kakamega', array(
+            'aggregate' => $aggregate,
+			'cumilative' => $cumilative,
+			'fconsumed' => $fconsumed,
+			'permorto' => $permorto,
+			'omaint' => $omaint,
+			'otcost' => $otcost,
+			'summary' => $summary,
+        ));
+	 }
+	 
+	 /**
+	 * Ugunja Office
+	 **/
+	 public function actionUgunja(){
+	 	$summary = new CActiveDataProvider('SummaryByOffice',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'UGUNJA'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name, analysisperiod ASC',
+                ),
+		));
+	 	$otcost = new CActiveDataProvider('TotalCost',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'UGUNJA'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name, analysisperiod ASC',
+                ),
+		));
+	 	$omaint = new CActiveDataProvider('TotalMaintenance',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'UGUNJA'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name, analysisperiod ASC',
+                ),
+		));	 
+	 	$permorto = new CActiveDataProvider('PeriodicTotalMaintenance',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'UGUNJA'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name, analysisperiod ASC',
+                ),
+		));
+	 	$fconsumed = new CActiveDataProvider('FuelConsumed',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'UGUNJA'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name ASC',
+                ),
+		));
+	 	
+	 	$cumilative = new CActiveDataProvider('CumilativeSummary',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'UGUNJA'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name ASC',
+                ),
+		));
+	 	$aggregate = new CActiveDataProvider('AggregateByOffice',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'UGUNJA'",
+               	),
+        		'pagination' => array(
+            		'pageSize' => 10,
+             ),
+		));
+		$this->render('ugunja', array(
+            'aggregate' => $aggregate,
+			'cumilative' => $cumilative,
+			'fconsumed' => $fconsumed,
+			'permorto' => $permorto,
+			'omaint' => $omaint,
+			'otcost' => $otcost,
+			'summary' => $summary,
+        ));
+	 }
+	 
+	 /**
+	 * Vihiga Office
+	 **/
+	 public function actionVihiga(){
+	 	$summary = new CActiveDataProvider('SummaryByOffice',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'VIHIGA'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name, analysisperiod ASC',
+                ),
+		));
+	 	$otcost = new CActiveDataProvider('TotalCost',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'VIHIGA'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name, analysisperiod ASC',
+                ),
+		));
+	 	$omaint = new CActiveDataProvider('TotalMaintenance',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'VIHIGA'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name, analysisperiod ASC',
+                ),
+		));	 
+	 	$permorto = new CActiveDataProvider('PeriodicTotalMaintenance',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'VIHIGA'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name, analysisperiod ASC',
+                ),
+		));
+	 	$fconsumed = new CActiveDataProvider('FuelConsumed',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'VIHIGA'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name ASC',
+                ),
+		));
+	 	
+	 	$cumilative = new CActiveDataProvider('CumilativeSummary',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'VIHIGA'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name ASC',
+                ),
+		));
+	 	$aggregate = new CActiveDataProvider('AggregateByOffice',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'VIHIGA'",
+               	),
+        		'pagination' => array(
+            		'pageSize' => 10,
+             ),
+		));
+		$this->render('vihiga', array(
+            'aggregate' => $aggregate,
+			'cumilative' => $cumilative,
+			'fconsumed' => $fconsumed,
+			'permorto' => $permorto,
+			'omaint' => $omaint,
+			'otcost' => $otcost,
+			'summary' => $summary,
+        ));
+	 }
+	 
+	 /**
+	 * Bungoma Office
+	 **/
+	 public function actionBungoma(){
+	 	$summary = new CActiveDataProvider('SummaryByOffice',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'BUNGOMA'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name, analysisperiod ASC',
+                ),
+		));
+	 	$otcost = new CActiveDataProvider('TotalCost',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'BUNGOMA'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name, analysisperiod ASC',
+                ),
+		));
+	 	$omaint = new CActiveDataProvider('TotalMaintenance',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'BUNGOMA'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name, analysisperiod ASC',
+                ),
+		));	 
+	 	$permorto = new CActiveDataProvider('PeriodicTotalMaintenance',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'BUNGOMA'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name, analysisperiod ASC',
+                ),
+		));
+	 	$fconsumed = new CActiveDataProvider('FuelConsumed',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'BUNGOMA'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name ASC',
+                ),
+		));
+	 	
+	 	$cumilative = new CActiveDataProvider('CumilativeSummary',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'BUNGOMA'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name ASC',
+                ),
+		));
+	 	$aggregate = new CActiveDataProvider('AggregateByOffice',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'BUNGOMA'",
+               	),
+        		'pagination' => array(
+            		'pageSize' => 10,
+             ),
+		));
+		$this->render('bungoma', array(
+            'aggregate' => $aggregate,
+			'cumilative' => $cumilative,
+			'fconsumed' => $fconsumed,
+			'permorto' => $permorto,
+			'omaint' => $omaint,
+			'otcost' => $otcost,
+			'summary' => $summary,
+        ));
+	 }
+	 
+	 /**
+	 * Lugari Office
+	 **/
+	 public function actionLugari(){
+	 	$summary = new CActiveDataProvider('SummaryByOffice',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'LUGARI'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name, analysisperiod ASC',
+                ),
+		));
+	 	$otcost = new CActiveDataProvider('TotalCost',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'LUGARI'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name, analysisperiod ASC',
+                ),
+		));
+	 	$omaint = new CActiveDataProvider('TotalMaintenance',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'LUGARI'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name, analysisperiod ASC',
+                ),
+		));	 
+	 	$permorto = new CActiveDataProvider('PeriodicTotalMaintenance',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'LUGARI'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name, analysisperiod ASC',
+                ),
+		));
+	 	$fconsumed = new CActiveDataProvider('FuelConsumed',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'LUGARI'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name ASC',
+                ),
+		));
+	 	
+	 	$cumilative = new CActiveDataProvider('CumilativeSummary',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'LUGARI'",
+               	),
+        		'pagination' => array(
+                        'pageSize' => 10,
+                 ),
+				'sort' => array(
+                     'defaultOrder' => 'office_name ASC',
+                ),
+		));
+	 	$aggregate = new CActiveDataProvider('AggregateByOffice',array(
+				'criteria' => array(
+                	'condition' => "office_name = 'LUGARI'",
+               	),
+        		'pagination' => array(
+            		'pageSize' => 10,
+             ),
+		));
+		$this->render('lugari', array(
+            'aggregate' => $aggregate,
+			'cumilative' => $cumilative,
+			'fconsumed' => $fconsumed,
+			'permorto' => $permorto,
+			'omaint' => $omaint,
+			'otcost' => $otcost,
+			'summary' => $summary,
+        ));
+	 }
 	
 	public function actionMenuFilter(){
 		$this->render('menufilter');
