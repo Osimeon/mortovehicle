@@ -1,0 +1,141 @@
+protected void runTask() {
+    final LocationManager locationManager = (LocationManager) context
+            .getSystemService(Context.LOCATION_SERVICE);
+    updateBestLocation(locationManager
+            .getLastKnownLocation(LocationManager.GPS_PROVIDER));
+    updateBestLocation(locationManager
+            .getLastKnownLocation(LocationManager.NETWORK_PROVIDER));
+    if (getLocationQuality(bestLocation) != LocationQuality.GOOD) {
+        Looper.prepare();
+        setLooper(Looper.myLooper());
+        // Define a listener that responds to location updates
+        LocationListener locationListener = new LocationListener() {
+
+            public void onLocationChanged(Location location) {
+                updateBestLocation(location);
+                if (getLocationQuality(bestLocation) != LocationQuality.GOOD)
+                    return;
+                // We're done
+                Looper l = getLooper();
+                if (l != null) l.quit();
+            }
+
+            public void onProviderEnabled(String provider) {}
+
+            public void onProviderDisabled(String provider) {}
+
+            public void onStatusChanged(String provider, int status,
+                    Bundle extras) {
+                // TODO Auto-generated method stub
+                Log.i("LocationCollector", "Fail");
+                Looper l = getLooper();
+                if (l != null) l.quit();
+            }
+        };
+        // Register the listener with the Location Manager to receive
+        // location updates
+        locationManager.requestLocationUpdates(
+                LocationManager.GPS_PROVIDER, 1000, 1, locationListener,
+                Looper.myLooper());
+        locationManager.requestLocationUpdates(
+                LocationManager.NETWORK_PROVIDER, 1000, 1,
+                locationListener, Looper.myLooper());
+        Timer t = new Timer();
+        t.schedule(new TimerTask() {
+
+            @Override
+            public void run() {
+                Looper l = getLooper();
+                if (l != null) l.quit();
+                // Log.i("LocationCollector",
+                // "Stopping collector due to timeout");
+            }
+        }, MAX_POLLING_TIME);
+        Looper.loop();
+        t.cancel();
+        locationManager.removeUpdates(locationListener);
+        setLooper(null);
+    }
+    if (getLocationQuality(bestLocation) != LocationQuality.BAD) 
+        sendUpdate(locationToString(bestLocation));
+    else Log.w("LocationCollector", "Failed to get a location");
+}
+
+private enum LocationQuality {
+    BAD, ACCEPTED, GOOD;
+
+    public String toString() {
+        if (this == GOOD) return "Good";
+        else if (this == ACCEPTED) return "Accepted";
+        else return "Bad";
+    }
+}
+
+private LocationQuality getLocationQuality(Location location) {
+    if (location == null) return LocationQuality.BAD;
+    if (!location.hasAccuracy()) return LocationQuality.BAD;
+    long currentTime = System.currentTimeMillis();
+    if (currentTime - location.getTime() < MAX_AGE
+            && location.getAccuracy() <= GOOD_ACCURACY)
+        return LocationQuality.GOOD;
+    if (location.getAccuracy() <= ACCEPTED_ACCURACY)
+        return LocationQuality.ACCEPTED;
+    return LocationQuality.BAD;
+}
+
+private synchronized void updateBestLocation(Location location) {
+    bestLocation = getBestLocation(location, bestLocation);
+}
+
+// Pretty much an unmodified version of googles example
+protected Location getBestLocation(Location location,
+        Location currentBestLocation) {
+    if (currentBestLocation == null) {
+        // A new location is always better than no location
+        return location;
+    }
+    if (location == null) return currentBestLocation;
+    // Check whether the new location fix is newer or older
+    long timeDelta = location.getTime() - currentBestLocation.getTime();
+    boolean isSignificantlyNewer = timeDelta > TWO_MINUTES;
+    boolean isSignificantlyOlder = timeDelta < -TWO_MINUTES;
+    boolean isNewer = timeDelta > 0;
+    // If it's been more than two minutes since the current location, use
+    // the new location
+    // because the user has likely moved
+    if (isSignificantlyNewer) {
+        return location;
+        // If the new location is more than two minutes older, it must be
+        // worse
+    } else if (isSignificantlyOlder) {
+        return currentBestLocation;
+    }
+    // Check whether the new location fix is more or less accurate
+    int accuracyDelta = (int) (location.getAccuracy() - currentBestLocation
+            .getAccuracy());
+    boolean isLessAccurate = accuracyDelta > 0;
+    boolean isMoreAccurate = accuracyDelta < 0;
+    boolean isSignificantlyLessAccurate = accuracyDelta > 200;
+    // Check if the old and new location are from the same provider
+    boolean isFromSameProvider = isSameProvider(location.getProvider(),
+            currentBestLocation.getProvider());
+    // Determine location quality using a combination of timeliness and
+    // accuracy
+    if (isMoreAccurate) {
+        return location;
+    } else if (isNewer && !isLessAccurate) {
+        return location;
+    } else if (isNewer && !isSignificantlyLessAccurate
+            && isFromSameProvider) {
+        return location;
+    }
+    return bestLocation;
+}
+
+/** Checks whether two providers are the same */
+private boolean isSameProvider(String provider1, String provider2) {
+    if (provider1 == null) {
+        return provider2 == null;
+    }
+    return provider1.equals(provider2);
+}

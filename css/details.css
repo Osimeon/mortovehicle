@@ -1,0 +1,63 @@
+/* CSS Document */
+/*Data table formatting CSS Code */
+#statsTable{ /* Table Heading*/
+		font: 10.5%/1.6 Georgia, "Times New Roman", Times, serif;
+		font-size: 0.6em;
+}
+
+table {
+		border-collapse: collapse;
+		width: 55%;
+		border: 1px solid #666;
+}
+
+caption {
+  		font-size: 1.2em;
+		font-weight: bold;
+		margin: 1em 0;
+}
+
+thead {
+  		background: #ccc url(/mortocycles/images/bar.gif) repeat-x left center;
+		border-top: 1px solid #a5a5a5;
+		border-bottom: 1px solid #a5a5a5;
+}
+
+th {
+  		font-weight: normal;
+		text-align: left;
+}
+
+th, td {
+  		padding: 0.1em 1em;
+}
+
+.odd {
+  		background-color:#edf5ff;
+}
+
+#statsTable tr:hover {
+  		background-color:#3d80df;
+		color: #fff;
+}
+
+#statsHead tr:hover {
+ 		 background-color: transparent;
+		 color: inherit;
+}
+
+col {
+	  border-right: 1px solid #ccc;
+}
+td {
+	border:1px solid #ccc;
+}
+
+body {
+  background-color:#D4D4D4;
+}
+
+.wrapper{
+	background-color: #fff;
+	width:1000px;
+}
